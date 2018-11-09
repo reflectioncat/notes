@@ -6,17 +6,17 @@
 目标：将一个exe注册成名为 <b>custom_service</b> 的windows service，这样可以在锁屏或者远程连接断掉后继续在后台跑。
 
 步骤：
-0. 下载 instsrv_srvany.zip ,并解压到比方说 c:\<b>custom_service_dir</b>\ 。
-1. 用管理员模式运行cmd，当前目录切换到刚才放instsrv.exe和srvany.exe的 c:\<b>custom_service_dir</b>\ 文件夹。
-2. <pre>instsrv <b>custom_service</b> c:\<b>custom_service_dir</b>\srvany.exe </pre> 使用instsrv把srvany安装成服务。
-3. <pre>regedit</pre> 打开注册表管理。
-4. 依次展开如下子键:[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services]，在该子键下找到并右击<b>custom_service</b>(对应服务名)，选择“新建”下的“项”，将其命名为Parameters。
-5. 单击选定Parameters，在右侧窗口中新建一个名为Application的字符串值，将其数值设置为需要做成服务的exe的绝对路径，比如c:\<b>custom_service_dir</b>\<b>test</b>.exe 。
-6. 按5里的步骤，新建名为AppDirectory的字符串值，数值为需要做成服务的exe所在的文件夹，比如 c:\<b>custom_service_dir</b> 。
-7. 如果exe需要运行时参数，新建名为AppParameters的字符串值。
-8. <pre>net start <b>custom_service</b></pre> 启动服务。
-9. 如果要停止服务，<pre>net stop <b>custom_service</b></pre>。
-10. 如果要删掉服务，<pre>sc delete <b>custom_service</b></pre>。注意之前要先stop。
+1. 下载 instsrv_srvany.zip ,并解压到比方说 c:\<b>custom_service_dir</b>\ 。
+2. 用管理员模式运行cmd，当前目录切换到刚才放instsrv.exe和srvany.exe的 c:\<b>custom_service_dir</b>\ 文件夹。
+3. ```instsrv <b>custom_service</b> c:\<b>custom_service_dir</b>\srvany.exe ``` 使用instsrv把srvany安装成服务。
+4. ```regedit``` 打开注册表管理。
+5. 依次展开如下子键:[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services]，在该子键下找到并右击<b>custom_service</b>(对应服务名)，选择“新建”下的“项”，将其命名为Parameters。
+6. 单击选定Parameters，在右侧窗口中新建一个名为Application的字符串值，将其数值设置为需要做成服务的exe的绝对路径，比如c:\<b>custom_service_dir</b>\<b>test</b>.exe 。
+7. 按5里的步骤，新建名为AppDirectory的字符串值，数值为需要做成服务的exe所在的文件夹，比如 c:\<b>custom_service_dir</b> 。
+8. 如果exe需要运行时参数，新建名为AppParameters的字符串值。
+9. ```net start <b>custom_service</b>``` 启动服务。
+10. 如果要停止服务，```net stop <b>custom_service</b>```。
+11. 如果要删掉服务，```sc delete <b>custom_service</b>```。注意之前要先stop。
 
 ======== 分割线，以上转自 https://www.cnblogs.com/zhaiqianfeng/p/4622561.html ========
 
