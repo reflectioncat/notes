@@ -1,8 +1,8 @@
 @echo off
-set srvany_path=C:\healthCheckC#\srvany.exe
-set service_name=healthCheck2
-set exe_path=C:\Users\chenkaifei\source\repos\ServerLifeDetector\ServerLifeDetector\bin\Release\netcoreapp2.1\win10-x64\ServerLifeDetector.exe
-set exe_dir=C:\Users\chenkaifei\source\repos\ServerLifeDetector\ServerLifeDetector\bin\Release\netcoreapp2.1\win10-x64
+set srvany_path=C:\test\srvany.exe
+set service_name=testService
+set exe_path=C:\test\test.exe
+set exe_dir=C:\test
 
 :: 如果曾经注册过则会有残留，先清理一下
 net stop %service_name%
