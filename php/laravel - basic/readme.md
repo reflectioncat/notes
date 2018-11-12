@@ -1,4 +1,4 @@
-# 中国区windows下laravel的标准包安装
+**中国区windows下laravel的标准包安装**
 
 1. 如果还没有安装wamp，请移步wamp安装教程，里面提到的php扩展包也最好都装一下。
 2. 如果机器上没有安装composer，那去下一个 https://getcomposer.org/Composer-Setup.exe ，并安装。装完后开个cmd```composer --version```看一下，如果正常就算装好了。
